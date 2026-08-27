@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ==== Minimal SaaS dashboard palette: slate canvas + blue accent ==== */
+
+    /* ---- Canvas + surfaces ---- */
+    --canvas: #f8fafc; /* soft gray page canvas */
+    --surface: #ffffff; /* cards, sidebar, topbar */
+    --surface-muted: #f9fafb; /* gray-50 — table headers, row hover */
+    --surface-sunken: #f3f4f6; /* gray-100 — search input, inset fills */
+
+    /* ---- Text hierarchy ---- */
+    --ink: #1e293b; /* slate-800 — headings, card values */
+    --ink-muted: #475569; /* slate-600 — body + table cells */
+    --ink-subtle: #94a3b8; /* slate-400 — captions, helper text */
+    --ink-inverse: #ffffff;
+
+    /* ---- Borders: gray-200 for structure, gray-100 for cards ---- */
+    --line: #e5e7eb;
+    --line-soft: #f3f4f6;
+
+    /* ---- Accent: blue (active nav, links, focus) ---- */
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --accent-soft: #eff6ff; /* blue-50 — active nav background */
+    --accent-ink: #2563eb; /* blue-600 — active nav text/icon */
+
+    /* ---- Primary action buttons: solid blue ---- */
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-ink: #ffffff;
+
+    /* ---- Gradient chip (balance / summary pill) ---- */
+    --grad-from: #6366f1; /* indigo-500 */
+    --grad-to: #7c3aed; /* purple-600 */
+
+    /* ---- Dark contrast card (live/urgent panels) ---- */
+    --darkcard: #1e293b;
+    --darkcard-ink: #f1f5f9;
+    --darkcard-muted: #94a3b8;
+
+    /* ---- Sidebar: white, same as cards ---- */
+    --rail: #ffffff;
+    --rail-hover: #f9fafb; /* hover:bg-gray-50 */
+    --rail-ink: #1e293b;
+    --rail-ink-muted: #4b5563; /* gray-600 — inactive nav items */
+
+    /* ---- Status colors (live data only) ---- */
+    --success: #22c55e;
+    --success-soft: #f0fdf4;
+    --warn: #f59e0b;
+    --warn-soft: #fffbeb;
+    --danger: #ef4444;
+    --danger-soft: #fef2f2;
+    --info: #3b82f6;
+    --info-soft: #eff6ff;
+
+    /* ---- Pastel tones for circular icon badges on cards ----
+       Paired fg/bg so the badges stay legible when the theme flips. */
+    --tone-blue: #3b82f6;
+    --tone-blue-bg: #dbeafe;
+    --tone-indigo: #6366f1;
+    --tone-indigo-bg: #e0e7ff;
+    --tone-purple: #7c3aed;
+    --tone-purple-bg: #ede9fe;
+    --tone-amber: #f59e0b;
+    --tone-amber-bg: #fef3c7;
+    --tone-rose: #f43f5e;
+    --tone-rose-bg: #ffe4e6;
+    --tone-green: #22c55e;
+    --tone-green-bg: #dcfce7;
+    --tone-slate: #64748b;
+    --tone-slate-bg: #f1f5f9;
+
+    /* ---- Chart palette (cool multi-hue) ---- */
+    --chart-1: #3b82f6;
+    --chart-2: #22c55e;
+    --chart-3: #6366f1;
+    --chart-4: #f59e0b;
+    --chart-5: #7c3aed;
+    --chart-6: #f43f5e;
+
+    color-scheme: light;
+  }
+
+  /* ==== Dark theme (cool slate) ==== */
+  html.dark {
+    --canvas: #0f172a;
+    --surface: #1e293b;
+    --surface-muted: #263244;
+    --surface-sunken: #334155;
+    --ink: #f1f5f9;
+    --ink-muted: #cbd5e1;
+    --ink-subtle: #94a3b8;
+    --ink-inverse: #0f172a;
+    --line: #334155;
+    --line-soft: #2a3648;
+
+    --accent: #60a5fa;
+    --accent-hover: #3b82f6;
+    --accent-soft: rgba(96, 165, 250, 0.16);
+    --accent-ink: #93c5fd;
+
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --primary-ink: #ffffff;
+
+    --grad-from: #6366f1;
+    --grad-to: #7c3aed;
+
+    --darkcard: #0b1220;
+    --darkcard-ink: #f1f5f9;
+    --darkcard-muted: #94a3b8;
+
+    --rail: #1e293b;
+    --rail-hover: #263244;
+    --rail-ink: #f1f5f9;
+    --rail-ink-muted: #94a3b8;
+
+    --success: #4ade80;
+    --success-soft: rgba(74, 222, 128, 0.16);
+    --warn: #fbbf24;
+    --warn-soft: rgba(251, 191, 36, 0.16);
+    --danger: #f87171;
+    --danger-soft: rgba(248, 113, 113, 0.16);
+    --info: #60a5fa;
+    --info-soft: rgba(96, 165, 250, 0.16);
+
+    --tone-blue: #93c5fd;
+    --tone-blue-bg: rgba(59, 130, 246, 0.18);
+    --tone-indigo: #a5b4fc;
+    --tone-indigo-bg: rgba(99, 102, 241, 0.18);
+    --tone-purple: #c4b5fd;
+    --tone-purple-bg: rgba(124, 58, 237, 0.2);
+    --tone-amber: #fcd34d;
+    --tone-amber-bg: rgba(245, 158, 11, 0.18);
+    --tone-rose: #fda4af;
+    --tone-rose-bg: rgba(244, 63, 94, 0.18);
+    --tone-green: #86efac;
+    --tone-green-bg: rgba(34, 197, 94, 0.18);
+    --tone-slate: #cbd5e1;
+    --tone-slate-bg: rgba(148, 163, 184, 0.16);
+
+    --chart-1: #60a5fa;
+    --chart-2: #4ade80;
+    --chart-3: #a5b4fc;
+    --chart-4: #fbbf24;
+    --chart-5: #c4b5fd;
+    --chart-6: #fda4af;
+
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: var(--line);
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.014em;
+  }
+
+  /* Tabular figures for numeric-heavy UI (KPIs, tables, timers). */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background: rgba(59, 130, 246, 0.18);
+  }
+}
+
+@layer utilities {
+  /* Thin, unobtrusive scrollbars for panels */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: color-mix(in srgb, var(--ink-subtle) 55%, transparent);
+    border-radius: 9999px;
+  }
+  .scrollbar-thin:hover::-webkit-scrollbar-thumb {
+    background-color: color-mix(in srgb, var(--ink-subtle) 80%, transparent);
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
